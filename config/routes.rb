@@ -16,8 +16,8 @@ Rails.application.routes.draw do
 
   resources :user_languages, only: [:edit, :update, :new, :create, :destroy]
 
-  get '/meetups/callback', to: 'meetups#new_event', as: 'new_event'
-
+  # get '/meetups/callback', to: 'meetups#new_event', as: 'new_event'
+  #
   resources :meetups, only: [:index, :show, :update] do
     get '/events', to: 'meetups#get_token', as: 'get_token'
     # get '/callback', to: 'meetups#new_event', as: 'new_event'

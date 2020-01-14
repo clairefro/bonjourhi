@@ -25,10 +25,6 @@ class UsersController < ApplicationController
     @title = "Bonjourhi | " + @user.first_name + " " + @user.last_name
   end
 
-  def new
-    
-  end
-
   def edit
     @user = User.find(params[:id])
     @header_title = "Edit Your Info"
