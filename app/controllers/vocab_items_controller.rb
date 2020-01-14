@@ -21,17 +21,12 @@ class VocabItemsController < ApplicationController
   def new
     @vocab_item = VocabItem.new
     @languages = current_user.languages
-
-
   end
 
   def create
-
     set_new_vocab_form_languages
     @vocab_item = VocabItem.new(vocab_item_params)
     @vocab_item.user = current_user
-
-
 
     if @vocab_item.save!
       respond_to do |format|

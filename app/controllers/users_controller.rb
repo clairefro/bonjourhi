@@ -37,12 +37,14 @@ class UsersController < ApplicationController
   end
 
   def account_update
+    @user = current_user
+    @user.update(user_params)
+    redirect_to my_account_path
   end
 
   private
 
   def user_params
-    # params.require(:user).permit(:)
+    params.require(:user).permit(:first_name, :last_name, :city, :email)
   end
-
 end
