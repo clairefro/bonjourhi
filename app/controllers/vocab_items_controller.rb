@@ -24,11 +24,12 @@ class VocabItemsController < ApplicationController
   end
 
   def create
-    set_new_vocab_form_languages
+    set_new_vocab_form_languages # update
     @vocab_item = VocabItem.new(vocab_item_params)
     @vocab_item.user = current_user
 
     if @vocab_item.save!
+      set_new_vocab_form_languages
       respond_to do |format|
         format.html { redirect_to vocab_items_path }
         format.js  # <-- will render `app/views/vocab_items/create.js.erb`
@@ -56,11 +57,17 @@ class VocabItemsController < ApplicationController
     params.require(:vocab_item).permit(:language_id, :content)
   end
 
+  # set first langauge in options array to the language of most recently added langauge
   def set_new_vocab_form_languages
-    last_vocab_lang = VocabItem.order('created_at DESC').first.language
-    new_vocab_form_languages = current_user.user_languages.filter(&:seeking).map {|ul| ul.language}
-    rest_of_langs = new_vocab_form_languages - [last_vocab_lang]
-    # @new_vocab_form_languages = current_user.user_languages.filter(&:seeking).map {|ul| ul.language}
-    @new_vocab_form_languages = [last_vocab_lang] + rest_of_langs
+    if current_user.vocab_items.size < 1
+      @new_vocab_form_languages = current_user.user_languages.filter(&:seeking).map {|ul| ul.language}
+    else
+      # get language of last vocab item entered by current user
+      last_vocab_lang = VocabItem.order('created_at DESC').first.language
+      user_seeking_languages = current_user.user_languages.filter(&:seeking).map {|ul| ul.language}
+      rest_of_langs = user_seeking_languages - [last_vocab_lang]
+      @new_vocab_form_languages = [last_vocab_lang] + rest_of_langs
+
+    end
   end
 end

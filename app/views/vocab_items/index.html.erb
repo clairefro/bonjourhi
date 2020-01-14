@@ -1,7 +1,7 @@
 <div class="container mt-3">
 <div class="vocab-add-container">
   <div class="bh-form-container">
-    <%= render 'vocab_items/vocab_item_form'%>
+    <%= render partial: 'vocab_items/vocab_item_form', locals: { new_vocab_form_languages: @new_vocab_form_languages0 }%>
   </div>
 
   <button class="bh-btn-solid-variable-slim" id="mic-button">
@@ -25,4 +25,3 @@
 <% @languages.each do |l|%>
   <span class="language-meta-data" id="language-meta-<%= l.id %>" data-iso-code="<%= l.iso_code %>" data-lang-name="<%= l.name %>"></span>
 <% end %>
-
