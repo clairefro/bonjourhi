@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_162541) do
+ActiveRecord::Schema.define(version: 2020_01_14_222000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_162541) do
     t.string "last_name"
     t.string "city"
     t.text "bio"
-    t.string "photo"
+    t.string "photo", default: "https://images.unsplash.com/photo-1466921583968-f07aa80c526e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
     t.integer "num_of_past_meetups"
     t.integer "pending_event_confirmation"
     t.string "availibility"
