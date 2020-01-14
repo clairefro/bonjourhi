@@ -42,6 +42,12 @@ class UsersController < ApplicationController
     redirect_to my_account_path
   end
 
+  def account_create
+    @user = current_user
+    @user.update(user_params)
+    redirect_to my_account_path
+  end
+
   private
 
   def user_params
