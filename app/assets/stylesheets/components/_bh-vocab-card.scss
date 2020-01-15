@@ -8,15 +8,14 @@
   .vocab-item-content{
     padding-right: 8px;
   }
+  i:hover {
+      cursor: pointer;
+  }
 }
 
 .vocab-card-right {
   display: flex;
-  .vocab-speaker {
-    padding-right: 8px;
-  }
   .vocab-delete {
     color:#b1b1b1;
   }
-
 }
