@@ -1,6 +1,8 @@
 $color: #F49342;
 
 #new-message-form-container {
+  position: absolute;
+  bottom: 0;
   display: flex;
   width:100%;
   button {
