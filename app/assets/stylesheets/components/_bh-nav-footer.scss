@@ -3,6 +3,7 @@
   justify-content: space-evenly;
   align-items: center;
   color: white;
+
   list-style-type: none;
   background-color: $bh-dark;
   width: 100vw;
@@ -15,4 +16,44 @@
 
 .bh-pushdown-content {
   margin-top: calc(100vw - 52px);
+}
+
+// .bh-nav-footer-item::after {
+//   content: attr(data-nav-text);
+// }
+
+.bh-nav-footer-item {
+  flex: 1;
+  p {
+    margin: 0;
+    padding-left: 12px;
+  }
+}
+
+.bh-nav-footer-item div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.bh-nav-footer-item a:hover,
+.bh-nav-footer-item a:hover div i {
+  color: #f49342;
+  transition: 0.3s;
+}
+
+.bh-nav-footer-item a {
+  color: white;
+  // transition: 0.3s;
+  &:link {
+    color: white;
+  }
+}
+
+// hide icon labels for phones
+@media (max-width: 600px) {
+  .bh-nav-footer-item a div p {
+    display: none;
+  }
 }

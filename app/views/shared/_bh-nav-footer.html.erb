@@ -3,40 +3,61 @@
 <% end %>
 
 <div class="bh-nav-footer">
-  <div>
+  <div class="bh-nav-footer-item" data-nav-text="Search">
     <%= link_to root_path do %>
+    <div>
       <i class="las la-search bh-nav-i"></i>
+      <p>Search</p>
+    </div>
     <% end %>
   </div>
-  <div>
+  <div class="bh-nav-footer-item" data-nav-text="Meetups">
     <%= link_to meetups_path do %>
+    <div>
       <i class="lar la-calendar bh-nav-i"></i>
+      <p>Meetups</p>
+    </div>
     <% end %>
   </div>
-  <div>
+  <div class="bh-nav-footer-item" data-nav-text="Vocab">
     <%= link_to vocab_items_path do %>
+    <div>
       <i class="las la-book bh-nav-i"></i>
+      <p>Vocab</p>
+    </div>
     <% end %>
   </div>
-  <div>
+  <div class="bh-nav-footer-item" data-nav-text="Chats">
     <% if user_signed_in? %>
       <%= link_to user_chats_path(current_user) do %>
-        <i class="lar la-envelope bh-nav-i"></i>
+        <div>
+          <i class="lar la-envelope bh-nav-i"></i>
+          <p>Chats</p>
+        </div>
       <% end %>
     <% else %>
       <%= link_to new_user_session_path do %>
-        <i class="lar la-envelope bh-nav-i"></i>
+        <div>
+          <i class="lar la-envelope bh-nav-i"></i>
+          <p>Chats</p>
+        </div>
       <% end %>
     <% end %>
   </div>
-  <div>
+  <div class="bh-nav-footer-item" data-nav-text="Profile">
     <% if user_signed_in? %>
       <%= link_to my_account_path do %>
-        <i class="lar la-user-circle bh-nav-i"></i>
+        <div>
+          <i class="lar la-user-circle bh-nav-i"></i>
+          <p>Profile</p>
+        </div>
       <% end %>
     <% else %>
       <%= link_to new_user_session_path do %>
-        <i class="lar la-user-circle bh-nav-i"></i>
+        <div>
+          <i class="lar la-user-circle bh-nav-i"></i>
+          <p>Profile</p>
+        </div>
       <% end %>
     <% end %>
   </div>
