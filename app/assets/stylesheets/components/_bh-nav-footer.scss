@@ -5,7 +5,7 @@
   color: white;
   list-style-type: none;
   background-color: $bh-dark;
-  width: 100%;
+  width: 100vw;
   height: 52px;
   font-size: 22px;
   text-align: center;
@@ -14,5 +14,5 @@
 }
 
 .bh-pushdown-content {
-  margin-top: 125px;
+  margin-top: calc(100vw - 52px);
 }
