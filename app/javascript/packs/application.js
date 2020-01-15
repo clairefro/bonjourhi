@@ -9,8 +9,6 @@ import { listenForMicClick } from './plugins/speechRec';
 // import {method_name} from './plugins/filename'
 // call the imported function here in application.js
 
-
-
 // only load this for /chats/*
 if(window.location.href.match(/chats\/w?/)){
   function messageForm(){
