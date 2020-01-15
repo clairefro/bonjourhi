@@ -1,6 +1,19 @@
 <div class="container mt-1">
  <div class="container">
-  <h3 class="bh-text-bg">Your chats:</h3>
+  <% if !@existing_chats_users.any? %>
+  <div class="no-chats-yet gray-text"
+       style="margin-top: 25px; text-align: center; display: flex; align-items: center; height: 20vh; width: 100%; justify-content: center">
+      <div>
+        <p>You haven't started any chats yet!</p>
+        <p>Search for a partner to start messaging</p>
+      </div>
+  </div>
+  
+  <!-- display arrow suggesting search -->
+  <i class="fas fa-arrow-down animated infinite pulse"
+     style="color: #f17712; font-size: 70px; position: absolute; bottom: 80px"></i>
+  </div>
+  <% end %>
 
   <% if @existing_chats_users %>
     <% @existing_chats_users.each do |other_user| %>
@@ -16,12 +29,12 @@
               <p style="font-weight: light;"><%= other_user.city %></p>
             </div>
             <div class="chat-last-message">
-              <p style="margin-bottom: 0px;">Last message:</p> 
+              <p style="margin-bottom: 0px;">Last message:</p>
               <% other_user.chats.each do |chat| %>
                 <p><%= chat.updated_at.strftime("%b %d, %H:%M") %></p>
-              <% end %> 
+              <% end %>
             </div>
-            
+
           </div>
         <% end %>
 
@@ -29,18 +42,5 @@
     <% end %>
   <% end %>
 
-  All Users:
-    <ul>
-      <% User.all.each do |other_user| %>
-       <% if other_user != current_user %>
-         <li>
-           <!-- create or show chat -->
-           <%= button_to(user_chats_path(current_user, other_user: other_user.id), method: :post) do %>
-           <%= other_user.first_name %>
-           <% end %>
-         </li>
-        <% end %>
-      <% end %>
-    </ul>
-  </div>
+
 </div>
