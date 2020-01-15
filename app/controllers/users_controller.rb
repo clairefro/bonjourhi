@@ -31,6 +31,7 @@ class UsersController < ApplicationController
   end
 
   def account_show
+    @header_title = "Your Profile"
     @user = current_user
     @sharing_user_langs = @user.user_languages.filter(&:sharing)
     @seeking_user_langs = @user.user_languages.filter(&:seeking)
