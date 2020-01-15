@@ -23,6 +23,8 @@ Message in realtime with potential partners (or past buddies)
 Start collecting vocab you think is cool. Don't know how to pronounce that French word? Let BonjourHi read it out to you. Don't know how to spell that Chinese word? Let BonjourHi write it down for you with through speech recognition.
 
 ## Attributions
+See Insights to view all contributors. 
+
 Icons: [Line Awesome](https://icons8.com/line-awesome)
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
