@@ -13,6 +13,10 @@
   width: 100%;
   padding-left: 0px;
   padding-right: 0px;
+  background-color: white;
+
+  border:none;
+  border-image: initial;
 }
 
 .name-city {
@@ -29,7 +33,7 @@
 .chat-last-message {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
+  justify-content: space-between;;
+  color: #CBCBCB;
 }
-
-
