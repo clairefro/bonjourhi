@@ -1,0 +1,31 @@
+.suggest-point-to {
+  color: #f17712;
+  font-size: 70px;
+  position: absolute;
+  bottom: 80px;
+}
+
+.point-to-profile-nav {
+  right: 10vw;
+}
+
+// tablet
+@media (min-width: 680px) {
+  // .point-to-profile-nav {
+  //   right: 10vw;
+  // }
+  .point-to-search-nav {
+    left: 10vw;
+  }
+}
+
+// pc
+@media (min-width: 1000px) {
+  .point-to-profile-nav {
+    right: 13vw;
+  }
+  .point-to-search-nav {
+    left: 13vw;
+  }
+
+}

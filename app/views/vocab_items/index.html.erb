@@ -1,4 +1,19 @@
 <div class="container mt-3">
+
+  <% if !current_user.user_languages.filter(&:seeking).any? %>
+    <div class="no-chats-yet gray-text"
+         style="margin-top: 25px; text-align: center; display: flex; align-items: center; height: 20vh; width: 100%; justify-content: center">
+        <div>
+          <p>You aren't practicing any languages yet!</p>
+          <p>Add a practicing language to your profile to start using the vocab feature</p>
+        </div>
+    </div>
+
+    <!-- display arrow suggesting search -->
+    <i class="fas fa-arrow-down animated infinite pulse suggest-point-to point-to-profile-nav"></i>
+    </div>
+  <% end %>
+
 <div class="vocab-add-container">
   <div class="bh-form-container">
     <%= render partial: 'vocab_items/vocab_item_form', locals: { new_vocab_form_languages: @new_vocab_form_languages0 }%>
