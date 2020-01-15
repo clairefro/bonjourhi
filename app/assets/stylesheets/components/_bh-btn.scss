@@ -141,3 +141,34 @@
   margin: 0;
   background-image: linear-gradient(to bottom, transparent, #f4f4f4);
 }
+
+.add-language-button {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+  margin-top: 10px;
+  align-items: center;
+  background-color: darken($color, 10%);
+  border: none;
+  color: white;
+  padding: 4px 12px;
+  // text-align: center;
+  text-decoration: none;
+  // display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  outline: none;
+  a:link {
+    color: white;
+  }
+  a:active {
+    color: white;
+  }
+  a:hover {
+    color: white;
+  }
+  a:visited {
+    color: white;
+  }
+}

@@ -14,11 +14,6 @@
 
     <div class="bh-flex-element">
       <h3><b>Sharing</b></h3>
-      <% if !@sharing_user_langs.any?  %>
-        <div style='padding-right: 6px; font-style: italic; font-size: 0.8em; color: red; '>
-          Add a language you know well to help others!
-        </div>
-      <% end %>
       <% @sharing_user_langs.each do |user_language| %>
         <div class="lang-pro d-flex justify-content-between">
           <span style="width: 1px">
@@ -37,17 +32,20 @@
         </div>
       <% end %>
       <%= link_to new_user_language_path(ul_type: 'sharing') do %>
+      <div class="add-language-button">
+        <span>Add language</span>
         <i class="fas fa-plus-circle"></i>
+      </div>
+      <% end %>
+      <% if !@sharing_user_langs.any?  %>
+        <div style='padding-right: 6px; font-style: italic; font-size: 0.8em; color: red; '>
+          Add a language you know well to help others!
+        </div>
       <% end %>
     </div>
 
     <div class="bh-flex-element">
       <h3><b>Practicing</b></h3>
-      <% if !@seeking_user_langs.any?  %>
-        <div style='padding-right: 6px; font-style: italic; font-size: 0.8em; color: red; '>
-          Add a language you want to practice speaking!
-        </div>
-      <% end %>
       <% @seeking_user_langs.each do |user_language| %>
         <div class="lang-pro d-flex justify-content-between">
           <span style="width: 1px">
@@ -66,7 +64,15 @@
         </div>
       <% end %>
       <%= link_to new_user_language_path(ul_type: 'seeking') do %>
+      <div class="add-language-button">
+        <span>Add language</span>
         <i class="fas fa-plus-circle"></i>
+      </div>
+      <% end %>
+      <% if !@seeking_user_langs.any?  %>
+        <div style='padding-right: 6px; font-style: italic; font-size: 0.8em; color: red; '>
+          Add a language you want to practice speaking!
+        </div>
       <% end %>
     </div>
 
