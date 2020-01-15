@@ -3,7 +3,7 @@
 
 An MVP app for finding partners to practice foreign language conversation skills. Just about as safe as CraigsList.
 
-To test it out, make an account and search for (fake) English or French speakers in Montreal. Add practicing languages in your profile to 
+To test it out, make an account and search for (fake) English or French speakers in Montreal. Add practicing languages in your profile to use the vocab feature and let others know what you can offer and what you're looking for.
 
 *Note: This app is public and anyone will be able to see your profile info / meetup requests. Your chats are real. Use with discretion.*
 
