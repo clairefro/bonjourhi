@@ -13,9 +13,9 @@
 
   <div class="signin">
     <% if user_signed_in? %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <%= link_to "<i class=\"las la-sign-out bh-nav-i\"></i>".html_safe, destroy_user_session_path, method: :delete, class: "bh-nav-i" %>
     <% else %>
-      <%= link_to "Login", new_user_session_path%>
+      <%= link_to "<i class=\"las la-sign-in bh-nav-i\"></i>".html_safe, new_user_session_path, class: "bh-nav-i" %>
     <% end %>
   </div>
 </div>

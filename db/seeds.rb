@@ -121,11 +121,7 @@ lea = User.create!(
 
 # LANGUAGE SEEDS
 
-
-
 random_users = User.all - [malcolm, claire, blair, lynn, lea, isabelle, antoine]
-
-
 
 puts "creating languages.."
 # LANGUAGE SEEDS
@@ -191,10 +187,7 @@ isabelle.user_languages.create!(language: en, proficiency: 3, seeking: true, sha
 isabelle.user_languages.create!(language: fr, proficiency: 5, seeking: false, sharing: true)
 isabelle.user_languages.create!(language: es, proficiency: 4, seeking: false, sharing: true)
 
-
-# MEETUP SEEDS
-
-
+# VOCAB ITEM SEEDS
 puts "creating vocab items..."
 blair.vocab_items.create!(content: "la libélula", language: es)
 blair.vocab_items.create!(content: "el hígado", language: es)
@@ -206,93 +199,10 @@ blair.vocab_items.create!(content: "la abeja", language: es)
 blair.vocab_items.create!(content: "el saltamontes", language: es)
 blair.vocab_items.create!(content: "la ardilla", language: es)
 
+# MEETUP SEEDS
 puts "Creating meetups..."
 
 duration = [30, 60, 90, 120]
-
-# blair past meet ups
-# 26.times do
-#   Meetup.create!(
-#   date: Date.new(2019),
-#   sender: blair,
-#   start_time: Time.now,
-#   duration: duration.sample,
-#   location: Faker::Time.backward(days: 2),
-#   confirmed: true,
-#   greeting: "can't wait to meet you!",
-#   recipient: User.last,
-#   sharing_lang: en,
-#   seeking_lang: es
-#   )
-# end
-
-
-# blair past meetups
-
-Meetup.create!(
-  date: Date.new(2019,3,29),
-  sender: blair,
-  start_time: Time.now,
-  duration: duration.sample,
-  location: Faker::Time.backward(days: 2),
-  confirmed: true,
-  greeting: "can't wait to meet you!",
-  recipient: User.last,
-  sharing_lang: en,
-  seeking_lang: es
-  )
-
-Meetup.create!(
-  date: Date.new(2019,2,4),
-  sender: blair,
-  start_time: Time.now,
-  duration: duration.sample,
-  location: 'buenos aires',
-  confirmed: true,
-  greeting: "can't wait to meet you!",
-  recipient: User.last(2).first,
-  sharing_lang: en,
-  seeking_lang: es
-  )
-
-Meetup.create!(
-  date: Date.new(2019,1,29),
-  sender: blair,
-  start_time: Time.now,
-  duration: duration.sample,
-  location: 'buenos aires',
-  confirmed: true,
-  greeting: "can't wait to meet you!",
-  recipient: User.last(3).first,
-  sharing_lang: en,
-  seeking_lang: es
-  )
-
-Meetup.create!(
-  date: Date.new(2019,1,12),
-  sender: blair,
-  start_time: Time.now,
-  duration: duration.sample,
-  location: 'buenos aires',
-  confirmed: true,
-  greeting: "can't wait to meet you!",
-  recipient: User.last(4).first,
-  sharing_lang: en,
-  seeking_lang: es
-  )
-
-Meetup.create!(
-  date: Date.new(2019,1,10),
-  sender: blair,
-  start_time: Time.now,
-  duration: duration.sample,
-  location: 'buenos aires',
-  confirmed: true,
-  greeting: "can't wait to meet you!",
-  recipient: User.last(5).first,
-  sharing_lang: en,
-  seeking_lang: es
-  )
 
 # REVIEW SEEDS
 

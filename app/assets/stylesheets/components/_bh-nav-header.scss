@@ -14,11 +14,10 @@
 
 .bh-nav-i {
   color: white;
+  width:35px;
+  height:35px
 }
 
-.bh-nav-i-home{
-  color: $bh-dark;
-}
 .bh-nav-title {
   display: flex;
   align-items: center;
@@ -35,8 +34,14 @@
   font-size: 33px;
 }
 
+.signin a i {
+  color: white;
+  font-size: 14px;
+  margin: 15px;
+}
+
 .signin a {
-  color: $bh-dark;
+  color: white;
   font-size: 14px;
   margin: 15px;
 }

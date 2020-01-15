@@ -55,15 +55,14 @@
   <% end %>
 
 
-  <% if @outbound_meetup_requests.any? %>
+  <% if @inbound_unconfirmed_meetup_requests.any? %>
     <h3 class="bh-text-bg">Awaiting your confirmation</h3>
-    <% @inbound_meetup_requests.each do |m| %>
+    <% @inbound_unconfirmed_meetup_requests.each do |m| %>
     <%= link_to meetup_path(m) do %>
     <div class="bh-card-meetup-index">
       <div class="image-user">
-        <%= image_tag m.opposite_user(current_user).photo || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80", class: "bh-avatar-sm" %>
+        <%= image_tag m.opposite_user(current_user).photo, class: "bh-avatar-sm" %>
       </div>
-
       <div class="user-info">
         <p style="font-weight: bold; color: black;"><%=  m.opposite_user(current_user).first_name %></p>
         <p style="font-weight: light;">pending</p>

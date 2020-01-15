@@ -1,15 +1,15 @@
 .bh-chat-scrollbox {
-  overflow: scroll;
+  overflow-y: auto;
   // height: calc(100vh - 200px);
   width: 100vw;
   padding: 6px;
 }
 
 #chat-window-body {
-  height:100vh;
+  height: 100vh;
   margin: 0;
   position: fixed;
-  width:100%;
+  width: 100%;
 }
 
 #messages {
