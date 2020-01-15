@@ -4,7 +4,7 @@ const speakText = (text, lang) => {
   u.text = text;
   u.lang = lang;
 
-  speechSynthesis.speak(u);
+  window.speechSynthesis.speak(u);
 };
 
 const listenForSpeakerClick = () => {
