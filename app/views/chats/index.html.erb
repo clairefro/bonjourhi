@@ -19,12 +19,14 @@
 
         <%= button_to(user_chats_path(current_user, other_user: other_user.id), method: :post, class:"chat-butto_to" ) do %>
           <div class="bh-chat-index">
-            <div class="chat-image">
-              <%= image_tag other_user.photo || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80", class: "bh-avatar-sm" %>
-            </div>
-            <div class="name-city">
-              <p style="font-weight: bold; color: black; margin-bottom: 0px;"><%= other_user.first_name %></p>
-              <p style="font-weight: light;"><%= other_user.city %></p>
+            <div class="d-flex">
+              <div class="chat-image">
+                <%= image_tag other_user.photo, class: "bh-avatar-sm" %>
+              </div>
+              <div class="name-city">
+                <p style="font-weight: bold; color: black; margin-bottom: 0px;"><%= other_user.first_name %></p>
+                <p style="font-weight: light;"><%= other_user.city %></p>
+              </div>
             </div>
             <div class="chat-last-message">
               <p style="margin-bottom: 0px;">Last message</p>
