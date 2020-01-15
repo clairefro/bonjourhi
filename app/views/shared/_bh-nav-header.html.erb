@@ -1,16 +1,16 @@
 <% if controller_name != "pages" %>
 
-<div class="bh-nav-header"> 
+<div class="bh-nav-header">
   <div class="bh-nav-back">
     <%= link_to :back do %>
       <i class="fas fa-angle-left bh-nav-i"></i>
     <% end %>
-  </div> 
-  
+  </div>
+
   <div>
     <h3 class="bh-nav-title"> <%= @header_title %> </h3>
   </div>
-  
+
   <div class="signin">
     <% if user_signed_in? %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
@@ -21,4 +21,3 @@
 </div>
 
 <% end %>
-
