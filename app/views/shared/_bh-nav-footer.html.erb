@@ -7,40 +7,41 @@
 <div class="bh-nav-footer">
   <div>
     <%= link_to root_path do %>
-      <i class="fas fa-search bh-nav-i"></i>
+      <i class="las la-search bh-nav-i"></i>
     <% end %>
   </div>
   <div>
     <%= link_to meetups_path do %>
-      <i class="fas fa-calendar-check bh-nav-i"></i>
+      <i class="lar la-calendar bh-nav-i"></i>
     <% end %>
   </div>
   <div>
     <%= link_to vocab_items_path do %>
-      <i class="fas fa-book bh-nav-i"></i>
+      <i class="las la-book bh-nav-i"></i>
     <% end %>
   </div>
   <div>
     <% if user_signed_in? %>
       <%= link_to user_chats_path(current_user) do %>
-        <i class="fas fa-envelope bh-nav-i"></i>
+        <i class="lar la-envelope bh-nav-i"></i>
+        <!-- <i class="fas fa-envelope bh-nav-i"></i> -->
       <% end %>
     <% else %>
       <%= link_to new_user_session_path do %>
-        <i class="fas fa-envelope bh-nav-i"></i>
+        <i class="lar la-envelope bh-nav-i"></i>
+        <!-- <i class="fas fa-envelope bh-nav-i"></i> -->
       <% end %>
     <% end %>
   </div>
   <div>
     <% if user_signed_in? %>
       <%= link_to my_account_path do %>
-        <i class="fas fa-user bh-nav-i"></i>
+        <i class="lar la-user-circle bh-nav-i"></i>
       <% end %>
     <% else %>
       <%= link_to new_user_session_path do %>
-        <i class="fas fa-user bh-nav-i"></i>
+        <i class="lar la-user-circle bh-nav-i"></i>
       <% end %>
     <% end %>
   </div>
 </div>
-
