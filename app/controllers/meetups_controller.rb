@@ -5,6 +5,8 @@ class MeetupsController < ApplicationController
     @outbound_meetup_requests = current_user.outbound_meetup_requests
     @inbound_meetup_requests = current_user.inbound_meetup_requests
     @confirmed_meetups = current_user.confirmed_meetups
+    @past_meetups = @confirmed_meetups.select { |cm| cm.meetup_occurred? }.reverse
+    @upcoming_meetups = @confirmed_meetups.select { |cm| cm.date > Date.today }
   end
 
   def show
