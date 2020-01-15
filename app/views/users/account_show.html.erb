@@ -26,8 +26,10 @@
               </div>
             </div>
           </div>
-          <%= button_to user_language_path(user_language), method: :delete do %>
-            <i class="fas fa-minus-circle mr-4"></i>
+          <%= link_to user_language_path(user_language),
+                method: :delete,
+                data: {confirm: "Are you sure you want to delete #{user_language.language.name} from your sharing languages?"} do %>
+            <i class="fas fa-trash mr-4" style="color: #c5c3c1"></i>
           <% end %>
         </div>
       <% end %>
@@ -58,8 +60,10 @@
               </div>
             </div>
           </div>
-          <%= button_to user_language_path(user_language), method: :delete do %>
-            <i class="fas fa-minus-circle mr-4"></i>
+          <%= link_to user_language_path(user_language),
+                method: :delete,
+                data: {confirm: "Are you sure you want to delete #{user_language.language.name} from your practicing languages?"} do %>
+            <i class="fas fa-trash mr-4" style="color: #c5c3c1"></i>
           <% end %>
         </div>
       <% end %>
