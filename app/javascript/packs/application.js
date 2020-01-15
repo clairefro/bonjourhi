@@ -13,7 +13,6 @@ import { listenForMicClick } from './plugins/speechRec';
 
 // only load this for /chats/*
 if(window.location.href.match(/chats\/w?/)){
-  console.log('entered applciation.js')
   function messageForm(){
   // submits new message form when user presses Enter (but not shift + enter!)
   var shiftDown = false;
@@ -60,5 +59,3 @@ if(window.location.href.match(/vocab_items/)) {
   listenForSelectChange();
   listenForMicClick();
 }
-
-console.log('loaded');
