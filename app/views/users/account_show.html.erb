@@ -74,6 +74,11 @@
 
   <div class="bh-text-body">
     <h3><b>Bio</b></h3>
+    <% if @user.bio == nil %>
+      <div style='padding-right: 6px; font-style: italic; font-size: 0.8em; color: red; '>
+        Tell a little about yourself! Update your photo and bio from "Edit Your Profile"
+      </div>
+    <% end %>
     <p><%= @user.bio %></p>
   </div>
 

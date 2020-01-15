@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @header_title = "User Info"
     @user = User.find(params[:id])
     @user_languages = UserLanguage.where("user_id = ?", params[:id])
-    @title = "Bonjourhi | " + @user.first_name + " " + @user.last_name
+    @title = "Bonjourhi | #{@user.first_name} #{@user.last_name}"
   end
 
   def edit
@@ -45,6 +45,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :city, :email)
+    params.require(:user).permit(:first_name, :last_name, :city, :email, :bio, :photo)
   end
 end
