@@ -40,7 +40,7 @@ class MeetupsController < ApplicationController
     @seeking_langs = @user.user_languages.filter(&:sharing).map {|user_languages| user_languages.language}.collect {|l| [ l.name, l.id ] }
     @sharing_langs = current_user.user_languages.filter(&:sharing).map {|user_languages| user_languages.language}.collect {|l| [ l.name, l.id ] }
 
-    if @meetup.save!
+    if @meetup.save
 
       redirect_to meetup_path(@meetup)
     else
