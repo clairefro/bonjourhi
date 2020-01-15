@@ -61,15 +61,17 @@
     <p><%= @user.bio %></p>
   </div>
 
-
-
   <div class="bh-text-body">
     <h3><b>Reviews</b></h3>
-    <% @user.user_reviews.each do |r|%>
-      <p><%= link_to user_path(r.author) do  %>
-          <%= image_tag r.author.photo, class: "bh-avatar-xxs" %>
-          <% end %>
-          <%= r.author.first_name %> | <%= r.date_to_string %></b></p> <p> <%= r.content %></p>
+    <% if @user.user_reviews.any? %>
+      <% @user.user_reviews.each do |r|%>
+        <p><%= link_to user_path(r.author) do  %>
+            <%= image_tag r.author.photo, class: "bh-avatar-xxs" %>
+            <% end %>
+            <%= r.author.first_name %> | <%= r.date_to_string %></b></p> <p> <%= r.content %></p>
+      <% end %>
+    <% else %>
+      <p style="color:#b2b2b2">(No reviews for this person yet)</p>
     <% end %>
   </div>
 </div>
@@ -78,6 +80,4 @@
   <div class="bh-button-sticky-bottom">
     <%= link_to "Request a Meetup", new_user_meetup_path(@user), class: "bh-btn-solid-lg-sticky" %>
   </div>
-<% else %>
-  <p><%= link_to "Edit #{@user.first_name}'s profile", edit_user_path(@user) %></p>
 <% end %>
