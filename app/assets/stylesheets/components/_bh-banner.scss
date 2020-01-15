@@ -1,86 +1,82 @@
 
 .bh-banner {
-  // display: flex;
-  // flex-direction: column;
   background-size: cover;
   background-position: center;
   background-position-y: -41px;
-  // padding: 35px 0;
   height: 100vh;
   width: 100%;
   p {
+    font-size: 20px;
     color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    margin-bottom: 0px;
   }
-}
-
-.bh-banner h2 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.bh-banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  margin-bottom: 0px;
+  h2 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
 }
 
 .bh-banner-content-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 35px;
+  justify-content: center;
+  padding: 20px;
   max-width: 576px;
   height: calc(100vh - 52px);
   margin: 0 auto;
+  flex-basis: auto;
   .banner-logo {
-    flex-grow: 1;
     width:100%;
+    max-height: 350px;
   }
 }
 
-
-// short and wide
-@media (max-height: 719px) {
+// short and wide - flex direction row
+@media (max-height: 644px) and (min-width: 719px) {
   .bh-banner-content-wrapper {
     max-width: none;
-    // flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
     width: 95vw;
     padding: 30px;
     margin: 0;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+
     .banner-logo {
       max-height: 300px;
+      max-width: 300px;
     }
     .container {
+      flex-grow: 1;
       max-width: 600px;
+      margin: 0;
     }
   }
 }
 
-
-//
-// // really short
-// @media (max-height: 467px) {
-//   .bh-banner-content-wrapper {
-//     max-width: none;
-//     flex-wrap: wrap;
-//     width: 100%;
-//     padding: 30px;
-//     margin: 0;
-//     justify-content: flex-start;
-//     align-items: flex-start;
-//     .banner-logo {
-//       // flex-grow: 1;
-//     }
-//     .container {
-//
-//     }
-//   }
-// }
+// xs - hide logo
+@media (max-height: 600px) and (max-width: 719px) {
+  .bh-banner-content-wrapper {
+    max-width: none;
+    flex-direction: column;
+    align-items: center;
+    width: 95vw;
+    padding: 30px;
+    margin: 0;
+    justify-content: center;
+    .banner-logo {
+      max-width: 0px;
+    }
+    .container {
+      flex-grow: 1;
+      max-width: 600px;
+      align-self: center;
+    }
+  }
+}
