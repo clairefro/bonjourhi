@@ -6,7 +6,7 @@
 }
 
 #chat-window-body {
-  height: calc(100vh - 52px);
+  max-height: calc(100vh - 52px);
   margin: 0;
   position: fixed;
   width: 100%;
