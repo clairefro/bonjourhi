@@ -60,21 +60,23 @@
   }
 }
 
-// really short
-@media (max-height: 467px) {
-  .bh-banner-content-wrapper {
-    max-width: none;
-    flex-wrap: wrap;
-    width: 100%;
-    padding: 30px;
-    margin: 0;
-    justify-content: flex-start;
-    align-items: flex-start;
-    .banner-logo {
-      // flex-grow: 1;
-    }
-    .container {
 
-    }
-  }
-}
+
+// // really short
+// @media (max-height: 467px) {
+//   .bh-banner-content-wrapper {
+//     max-width: none;
+//     flex-wrap: wrap;
+//     width: 100%;
+//     padding: 30px;
+//     margin: 0;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//     .banner-logo {
+//       // flex-grow: 1;
+//     }
+//     .container {
+//
+//     }
+//   }
+// }

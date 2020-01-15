@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="bh-flex-container">
+  <div class="bh-flex-container" style="border-bottom: solid 1px black; padding-bottom: 20px; margin-bottom: 20px;">
     <div class="bh-flex-element">
       <img class="bh-avatar-lg" src="<%= @user.photo %>">
     </div>
@@ -92,9 +92,8 @@
     <p><%= @user.bio %></p>
   </div>
 
+
 </div>
-
-
 <div class="bh-button-sticky-bottom">
   <%= link_to "Edit Your profile", edit_user_path(@user), class: "bh-btn-solid-lg-sticky" %>
 </div>
