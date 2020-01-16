@@ -18,7 +18,6 @@ const speakText = (text, lang) => {
   u.text = text;
   u.lang = lang;
   speakWithTimeout(u);
-  console.log('yooooo')
 };
 
 const listenForSpeakerClick = () => {

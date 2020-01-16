@@ -1,17 +1,34 @@
+const toggleElementAnimation = (verb, el) => {
+  el.classList[verb]('listening');
+  el.classList[verb]('animated');
+  el.classList[verb]('infinite');
+  el.classList[verb]('pulse');
+}
+
 const recognizeSpeech = (lang, outputLocation) => {
+  const micButton = document.getElementById('mic-button');
 
   const recognition = new webkitSpeechRecognition();
   recognition.lang = lang;
-  recognition.start();
 
-  recognition.addEventListener('result', (event) => {
+  recognition.onstart = () => {
+    console.log('speech rec started');
+    toggleElementAnimation('add', micButton);
+  }
+
+  recognition.onend = () => {
+    console.log('speech rec ended');
+    toggleElementAnimation('remove', micButton);
+  }
+
+  recognition.onresult = (event) => {
     if (event.results.length > 0) {
-      console.log(event.results[0][0].transcript);
       const transcript = event.results[0][0].transcript;
+      console.log({transcript});
       outputLocation.value = transcript;
-      // toggle animation class
     }
-});
+  };
+  recognition.start();
 };
 
 const listenForMicClick = () => {

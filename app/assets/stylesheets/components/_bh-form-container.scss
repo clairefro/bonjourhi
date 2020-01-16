@@ -17,4 +17,8 @@
   top: 61px;
   left: 10px;
   background-color: $color;
+  outline: none;
+}
+#mic-button.listening {
+  background-color: red;
 }
