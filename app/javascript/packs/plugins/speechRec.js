@@ -6,29 +6,35 @@ const toggleElementAnimation = (verb, el) => {
 }
 
 const recognizeSpeech = (lang, outputLocation) => {
-  const micButton = document.getElementById('mic-button');
+  // check browser compatibility
+  const SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+  if (!SpeechRecognition) {
+    alert('Your browser does not support speech recognition. Please try any of these browsers to use this feature: \n\nChrome (desktop/Android), Android Browser, Samsung Internet');
+  } else {
+    // setup and start recognition
+    const micButton = document.getElementById('mic-button');
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = lang;
 
-  const recognition = new webkitSpeechRecognition();
-  recognition.lang = lang;
-
-  recognition.onstart = () => {
-    console.log('speech rec started');
-    toggleElementAnimation('add', micButton);
-  }
-
-  recognition.onend = () => {
-    console.log('speech rec ended');
-    toggleElementAnimation('remove', micButton);
-  }
-
-  recognition.onresult = (event) => {
-    if (event.results.length > 0) {
-      const transcript = event.results[0][0].transcript;
-      console.log({transcript});
-      outputLocation.value = transcript;
+    recognition.onstart = () => {
+      console.log('speech rec started');
+      toggleElementAnimation('add', micButton);
     }
-  };
-  recognition.start();
+
+    recognition.onend = () => {
+      console.log('speech rec ended');
+      toggleElementAnimation('remove', micButton);
+    }
+
+    recognition.onresult = (event) => {
+      if (event.results.length > 0) {
+        const transcript = event.results[0][0].transcript;
+        console.log({transcript});
+        outputLocation.value = transcript;
+      }
+    };
+    recognition.start();
+  }
 };
 
 const listenForMicClick = () => {
